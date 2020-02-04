@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_230420) do
   create_table "diets", force: :cascade do |t|
     t.string "diet_type"
     t.text "nutrition"
-    t.text "enviromental_impact"
+    t.text "environmental_impact"
   end
 
 end
