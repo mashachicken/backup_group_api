@@ -20,6 +20,7 @@
   <div class="col-1"></div>
   <div class="col-7">
     <% if params[:dietOptions] %>
+    <% @diet = Diet.new(params[:dietOptions]) %>
     <div class="card">
       <div class="card-header">
         <h3> Results Header </h3>
@@ -39,7 +40,7 @@
         <% end %>
         <p> Your diet has an impact on the environment! These are the effects it has.</p>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><span id="tCO2e"></span> tons of CO2 emitted to meet your needs per year!</li>
+          <li class="list-group-item"> <%= @diet.get_diet_environment %> tons of CO2 emitted to meet your needs per year!</li>
         </ul>
       </div><!-- class = card-body -->
       <div class="card-footer">
@@ -75,7 +76,7 @@
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="dietOptions" id="vegetarian" value="Vegeterian">
+                <input class="form-check-input" type="radio" name="dietOptions" id="vegetarian" value="Vegetarian">
                 <label class="form-check-label" for="vegetarian">
                   Vegetarian
                 </label>
