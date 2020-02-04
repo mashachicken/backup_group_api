@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+diet_list = [
+  [ "Avergae", "nutritional info",  "2.5" ],
+  [ "Meat Lover", "nutrition", "3.3" ],
+  [ "No Beef", "nutrition", "1.9" ],
+  [ "Vegetarian", "nutrition", "1.7" ],
+  [ "Vegan", "nutrition", "1.5"],
+]
+
+diet_list.each do |diet, nutrition, c02|
+  Diet.create( diet_type: diet, nutrition: nutrition, enviromental_impact: c02 )
+end
