@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>EnVisionRb</title>
-  <!-- <%= csrf_meta_tags %> -->
-  <!-- <%= csp_meta_tag %> -->
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
-  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,23 +21,21 @@
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li> -->
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to('Edit registration', edit_user_registration_path) %>
+        </li>
+        <li class="nav-link">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+        <% else %>
+        <li class="nav-link">
+          <%= link_to('Login', new_user_session_path) %>
+        </li>
+        <li class="nav-item">
+          <%= link_to('Register', new_user_registration_path) %>
+        </li>
+        <% end %>
       </ul>
       <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -45,6 +43,8 @@
       </form> -->
     </div>
   </nav>
+  <%=flash[:alert]%>
+  <%=flash[:notice]%>
   <%= yield %>
 </body>
 </html>

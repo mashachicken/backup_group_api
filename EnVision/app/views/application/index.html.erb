@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-text"> Informative header </h4>
+      </div><!-- class = card-body -->
+      <div class="card-body">
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet rutrum enim, sometimes of life itself. Integer itself or orange nutrition. Soccer was a bow-free, carrots orange graduated from financing. Jasmine Performance pain but just deductible author. Phasellus sed sapien the ends of the, trucks therapy of life, was with child. Kids until it was chili or carton Planning and football. Stress trigger pull bananas, functional protein in a salad with arrows. Tomorrow nutrition gate mixer, maximum deductible is the quiver. Duis tortor quam, is now, and innovative iaculis, risus dolor eleifend of hatred, nor the quiver, and the great lakes region.
+        </p>
+        <p class="card-text">
+          But there is no homework, variegated and laughter and a quiver Performance developer. Until the time of diam nec velit law enforcement, who is a great man, my classroom. Maecenas eu price received by fear. To morrow is nec condimentum out. Tomorrow sit convallis of laughter, nor Reserved television itself, but ecological Mauris Members it. Till layer ugly yeast sad about. But, it is not a high school in lorem eleifend lobortis rutrum felis.
+        </p>
+        <p class="card-text">
+          Nibh losing their arrows. The animations is not bananas across the country. Even as peanut protein, author of propaganda, wind, temperature. And does not become a ullamcorper Suspendisse ultricies ac, arcu. Sed vel dui is not always the author. But now, the betting, but receives lorem. Each soccer is always afternoon. The ends of the nunc elit lorem ipsum dolor sit Quisque congue. Before the id ipsum porttitor Maecenas vehicula, odio laoreet vitae egestas. Live very sightseeing, or just any price, photography bookmark. No members of the Bureau Bureau. Ultricies any deductible. Nullam purus augue, volutpat quis neque ut, laoreet hendrerit nulla. Planning a live nibh to a pregnant employee carrots. But at present but neither laoreet football and pot.
+        </p>
+      </div><!-- class = card-body -->
+    </div><!-- class = card -->
+  </div><!-- class = col-4 -->
+  <div class="col-1"></div>
+  <div class="col-7">
+    <% if params[:dietOptions] %>
+    <div class="card">
+      <div class="card-header">
+        <h3> Results Header </h3>
+      </div><!-- class = card-body -->
+      <div class="card-body">
+        <% case params[:dietOptions] %>
+        <% when "Average" %>
+        <p> You have an average diet </p>
+        <% when "Meat Lover" %>
+        <p> You love consuming connective tissues of animals </p>
+        <% when "No Beef" %>
+        <img src="https://archive.sltrib.com/images/2011/0926/food_blogs_wheresthebeef~0.jpg">
+        <% when "Vegetarian" %>
+        <img src="https://pics.esmemes.com/that-moment-when-tour-steak-on-anduou-canalreadu-reel-your-3593781.png">
+        <% when "Vegan" %>
+        <p> You are vegan and I can't really think of a good joke for that, sorry. Your lifestyle is legit and probably inevitable in a world of rising population. But we'll see. Either way you be you. </p>
+        <% end %>
+        <p> Your diet has an impact on the environment! These are the effects it has.</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span id="tCO2e"></span> tons of CO2 emitted to meet your needs per year!</li>
+        </ul>
+      </div><!-- class = card-body -->
+      <div class="card-footer">
+        <a href="/">Take survey again!</a>
+      </div><!-- class = card-footer -->
+    </div><!-- class = card -->
+    <% else %>
+    <div class="card">
+      <div class="card-header">
+        <h3> Specific survey header </h3>
+      </div><!-- class = card-body -->
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <form id="survey">
+            <div class="form-group">
+              <label for="diet type">Describe your diet</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="dietOptions" id="averageDiet" value="Average" checked>
+                <label class="form-check-label" for="averageDiet">
+                  Average Diet
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="dietOptions" id="meatLover" value="Meat Lover">
+                <label class="form-check-label" for="meatLover">
+                  Meat Lover
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="dietOptions" id="noBeef" value="No Beef">
+                <label class="form-check-label" for="noBeef">
+                  No Beef
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="dietOptions" id="vegetarian" value="Vegeterian">
+                <label class="form-check-label" for="vegetarian">
+                  Vegetarian
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="dietOptions" id="vegan" value="Vegan">
+                <label class="form-check-label" for="vegan">
+                  Vegan
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </ul>
+      </div><!-- class = card-body -->
+    </div><!-- class = card -->
+    <% end %>
+  </div><!-- class = col-7 -->
+</div><!-- class = row -->
